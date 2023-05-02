@@ -1,0 +1,266 @@
+GIT COMMANDS:
+============
+
+1)To set the globalname and password:
+-------------------------------------
+git config --global user.name nbiswal
+git config --global user.email nagen.biswal@capgemini.com
+
+2)To check username and passwd set or not:
+----------------------------------------
+git config --global user.name
+git config --global user.email
+
+
+3)To Open vscode run below command:
+--------------------------------
+code .
+
+4)To check Hidden files run the below command:
+----------------------------------------------
+git init
+
+5)To know the status:
+---------------------
+git status
+
+->Untracked
+  -To follow the track
+->Unmodified
+  -
+->Modified
+  -
+->Staged
+  -Ready to commit
+
+
+6)Add the file to untracted to staging Area:
+------------------------------------------
+->first check the ststus
+->then qrun the below command to add the file 
+git add about.html
+        ----------
+         file name
+
+->then checck the status
+->to one time add lots of file
+
+git add -A
+
+->Then all files moves to staging Area.
+
+7)To Commit the files
+----------------------
+git commit -m "Type here comment"
+
+EX:-
+   $ git commit -m "commit the files"
+   [master c43ab36] commit the files
+   3 files changed, 28 insertions(+), 1 deletion(-) 
+
+
+8)If you your files are delted after commit,to return back the files:
+---------------------------------------------------------------------
+git checkout about.html
+
+->If you want to recover the all files which are deleted 
+
+git checkout -f 
+
+
+9)To see the commit files are:
+------------------------------
+git log
+
+EX:-
+--
+$ git log
+commit c43ab363ca7ff22ee61a7b627dc44da96efe90a2 (HEAD -> master)
+Author: nbiswal <nagen.biswal@capgemini.com>
+Date:   Mon May 1 11:14:53 2023 +0530
+
+    commit the files
+
+commit 779516099d420b250030b373e0b89df2f5625a9c
+Author: nbiswal <nagen.biswal@capgemini.com>
+Date:   Mon May 1 11:00:51 2023 +0530
+
+    The first commit
+
+10)To see the last commit with details:
+--------------------------------------
+git log -p -1
+
+EX:-
+---
+$ git log -p -1
+commit c43ab363ca7ff22ee61a7b627dc44da96efe90a2 (HEAD -> master)
+Author: nbiswal <nagen.biswal@capgemini.com>
+Date:   Mon May 1 11:14:53 2023 +0530
+
+    commit the files
+
+diff --git a/about.html b/about.html
+index e69de29..cba833f 100644
+--- a/about.html
++++ b/about.html
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.:...skipping...
+commit c43ab363ca7ff22ee61a7b627dc44da96efe90a2 (HEAD -> master)
+Author: nbiswal <nagen.biswal@capgemini.com>
+Date:   Mon May 1 11:14:53 2023 +0530
+
+11)To direct commit without adding the files in staging area:
+-------------------------------------------------------------
+git commit -a -m "sikkiping the staged area"
+
+EX:-
+---
+$ git commit -a -m "sikkiping the staged area"
+[master 8186706] sikkiping the staged area
+ 3 files changed, 6 insertions(+)
+
+
+12)To remove the files from the staging Area:
+---------------------------------------------
+git rm --cached delete.html 
+
+EX:-
+---
+$ git rm --cached delete.html
+rm 'delete.html'
+
+
+13)To delete the files from Main files:
+---------------------------------------
+git rm filename
+
+
+14)To see the git status in short term:
+---------------------------------------
+git status -s
+
+
+15)To check the brtanchs are available:
+--------------------------------------
+git branch
+
+
+16)To create the branch:-
+-------------------------
+git branch branchname
+
+
+
+17)To create from one branch to another branch:
+-----------------------------------------------
+git chekout branchname
+
+EX:-
+---
+$ git checkout updatecode
+Switched to branch 'updatecode'
+
+
+17)How to merge a branch file into another branch:
+--------------------------------------------------
+git merge branchname
+
+EX:-
+----
+$ git merge updatecode
+Updating f176b2a..9848827
+Fast-forward
+update.html | 4 ++++
+1 file changed, 4 insertions(+)
+
+
+18)How to create a branch and switch to that branch directly:-
+=============================================================
+git chekout -b branchname
+
+
+EX:-
+---
+$ git checkout -b javaprogram
+Switched to a new branch 'javaprogram'
+
+19)How to add repository in Gitbash:
+------------------------------------
+->Copy from remote path from github then paste in git bash
+EX:-
+--
+git remote add origin https://github.com/nagenbiswal123/All-About-Git.git
+
+
+20)How to check you are in remote or in other:-
+----------------------------------------------
+git remote
+
+EX:-
+---
+$ git remote
+origin
+
+21)To check where will be fetch and push
+------------------------------------------
+git remote -v 
+
+EX:-
+---
+$ git remote -v
+origin  https://github.com/nagenbiswal123/All-About-Git.git (fetch)
+origin  https://github.com/nagenbiswal123/All-About-Git.git (push)
+
+
+22)To push files to repository from your gitbash:
+-------------------------------------------------
+git push origin master
+
+EX:-
+---
+$ git push origin master
+Enumerating objects: 36, done.
+Counting objects: 100% (36/36), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (32/32), done.
+Writing objects: 100% (36/36), 3.63 KiB | 464.00 KiB/s, done.
+Total 36 (delta 14), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (14/14), done.
+To https://github.com/nagenbiswal123/All-About-Git.git
+ * [new branch]      master -> master
+
+
+23)To clone a file from the repository:
+---------------------------------------
+git clone url filename
+
+EX:-
+---
+$ git clone https://github.com/Asabeneh/30-Days-Of-JavaScript.git jsproject
+Cloning into 'jsproject'...
+remote: Enumerating objects: 3124, done.
+remote: Counting objects: 100% (41/41), done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 3124 (delta 16), reused 35 (delta 15), pack-reused 3083
+Receiving objects: 100% (3124/3124), 122.03 MiB | 4.24 MiB/s, done.
+Resolving deltas: 100% (1447/1447), done.
+Updating files: 100% (720/720), done.
+
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
